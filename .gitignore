@@ -1,0 +1,7 @@
+scratch/
+bin/
+obj/
+node_modules/
+dist/
+.vs/
+.vscode/

@@ -1,0 +1,12 @@
+Angular Config Files Explanation (Hands-On 1):
+1. angular.json: Defines build configurations, paths, budgets, assets, and styles for the Angular workspace.
+2. tsconfig.json: Root TypeScript compiler configuration specifying targets, module resolution, and decorator flags.
+3. tsconfig.app.json: App-specific TS config inheriting from tsconfig.json, specifying files to include and compile.
+4. package.json: Lists project dependencies, scripts, versions, and development configurations.
+5. src/main.ts: Application entry point that bootstraps the root standalone AppComponent using appConfig.
+6. app.config.ts: Configuration provider for the standalone application (routers, providers, state management).
+7. src/app/app.component.ts: Root component of the application providing the bootstrap selector and hosting the layout.
+8. src/index.html: Main index HTML template where Angular loads dynamically and injects the app-root.
+
+Budgets configuration in angular.json:
+Controls warnings and errors based on compilation bundle size. maximumWarning warns developers during compilation if bundle exceeds limits, while maximumError fails the build to prevent deploying oversized bundles, promoting performance optimization.

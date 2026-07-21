@@ -1,0 +1,21 @@
+<h2>Course Directory</h2>
+
+<!-- Spinner dynamically bound to LoadingService -->
+<div *ngIf="loadingService.isLoading$ | async" class="text-center my-4">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4" *ngIf="courses$ | async as courses">
+  <div class="col" *ngFor="let c of courses; trackBy: trackByCourseId">
+    <app-course-card [course]="c" (enrollRequested)="onEnrollRequest($event)"></app-course-card>
+  </div>
+  <div *ngIf="courses.length === 0" class="col-12 text-center text-muted">
+    <p>No courses available at the moment.</p>
+  </div>
+</div>
+
+<div *ngIf="selectedCourseId" class="mt-4 p-3 bg-white rounded border">
+  <p>Last interacted Course ID: <strong>{{ selectedCourseId }}</strong></p>
+</div>
