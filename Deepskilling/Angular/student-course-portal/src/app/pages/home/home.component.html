@@ -1,0 +1,26 @@
+<div class="p-5 mb-4 bg-light rounded-3 text-center">
+  <h1>Welcome to {{ portalName }}</h1>
+  <p class="lead">Manage your profiles, courses, and registrations in one place.</p>
+  <button class="btn btn-primary btn-lg" [disabled]="!isPortalActive" (click)="onEnrollClick()">Enroll Now</button>
+  <p *ngIf="message" class="text-success mt-2">{{ message }}</p>
+
+  <div class="row mt-5 text-center">
+    <div class="col-md-4">
+      <h3>12</h3>
+      <p>Courses Available</p>
+    </div>
+    <div class="col-md-4">
+      <h3>3</h3>
+      <p>Enrolled</p>
+    </div>
+    <div class="col-md-4">
+      <h3>3.8</h3>
+      <p>GPA</p>
+    </div>
+  </div>
+
+  <div class="mt-4 col-md-6 mx-auto">
+    <input [(ngModel)]="searchTerm" class="form-control" placeholder="Quick Search Course...">
+    <p class="text-muted mt-2" *ngIf="searchTerm">Searching for: {{ searchTerm }}</p>
+  </div>
+</div>
